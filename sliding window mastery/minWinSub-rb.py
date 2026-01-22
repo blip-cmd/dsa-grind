@@ -2,7 +2,7 @@ from collections import Counter
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        #HARD
+        #tier1
         
         #vars
         #target_counts: dictionary to store t letters and counts
@@ -26,6 +26,33 @@ class Solution:
         have = 0
         need = len(target_counts)
         
-        res,res_len = [-1,-1], float('inf')
+        res,res_len = [0,-1], float('inf')
+        l = res[0]
         
+        #iterate
+        for r in range(len(s)):
+            char = s[r]
+            #update dict
+            window_counts[char] = 1 + window_counts.get(char, 0)
+            
+            #check if valid
+            if char in target_counts and window_counts[char] == target_counts[char]:
+                have += 1
+            
+            #minimize when valid
+            while have == need:
+                #update result only if smaller window is found
+                if (r-l+1) < res_len:
+                    res_len = min((r-l+1), res_len)
+                    res = [l,r]
+            
+                char_l = s[l]
+                window_counts[char_l] -=  1
+                
+                if char_l in  target_counts and window_counts[char_l] < target_counts[char_l]:
+                    have -= 1
+                
+                
+                l += 1
         
+        return s[res[0]:res[1]+1] if res_len != float('inf') else ""
