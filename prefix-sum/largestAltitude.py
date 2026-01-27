@@ -6,13 +6,10 @@ class Solution:
 
        #code
 
-        max_height_point = 0
         max_height = 0
         height = 0
         for r in range(len(gain)):
             height = height + gain[r]
-            if height > max_height:
-                max_height_point = r
-                max_height = max(height, max_height)
+            max_height = max(height, max_height)
 
-        return gain[max_height_point]
+        return max_height
