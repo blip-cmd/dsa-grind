@@ -6,9 +6,8 @@ class Solution(object):
         :rtype: int
         """
 
-        # brute force 
+        # brute force. O(n^2) run and O(1) space
         # check each possible subarray and sum. and count sums matching given k
-
         # result = 0
         
         # for i in range(len(nums)):
@@ -20,7 +19,9 @@ class Solution(object):
 
         # return result
         
-        #optimized using hashmap to store cumulative sum frequencies
+        # optimized
+        # using hashmap to store cumulative sum frequencies
+        # count by identifying possible sub-arrays based on tracking dict. O(n) in run and space 
         result = 0
         prefix_dict = {0:1}
         running_sum = 0 
