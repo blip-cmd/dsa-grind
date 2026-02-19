@@ -10,7 +10,8 @@ class Solution(object):
         # col = mid % n
 
         n = len(matrix[0])
-        l,r = 0, n-1
+        l = 0
+        r = len(matrix) * n - 1
         while l<=r:
             mid = (l+r)//2
 
