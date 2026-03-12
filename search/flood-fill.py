@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
 
@@ -16,3 +18,27 @@ class Solution:
 
         dfs(sr,sc)               
         return image
+
+
+#example usage
+image = [[1,1,1],[1,1,0],[1,0,1]]
+sr = 1    
+sc = 1
+color = 2
+
+print()
+print("Flood Fill")
+print(f"\nStarting pixel: ({sr}, {sc})")
+print(f"Fill color: {color}")
+print("\nOriginal image:")
+for row in image:
+    print(" ", row)
+
+solution = Solution()
+result = solution.floodFill(image, sr, sc, color)
+
+print("\nFilled image:")
+for row in result:
+    print(" ", row)
+print("\nAll connected pixels matching the starting color have been filled")   
+print()
