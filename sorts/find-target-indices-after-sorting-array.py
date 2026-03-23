@@ -1,5 +1,7 @@
 class Solution:
     def targetIndices(self, nums: List[int], target: int) -> List[int]:
+        
+        # O(nlogn) solution
         # nums.sort()
         # results = []
         # for i,x in enumerate(nums):
@@ -7,6 +9,7 @@ class Solution:
         #         results.append(i)
         # return(results)
 
+        # O(n) solution
         less = 0 
         equal = 0
         for i,x in enumerate(nums):
