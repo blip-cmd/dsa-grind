@@ -1,23 +1,31 @@
-class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+class Solution(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
 
-        #starting at ends.
-        #setup
-        l = 0
+        # int arr is incrasing
+        # left+right = target, l<r
+        # res = [l+1,r+1]
+        # O(1) extra space -> no new containers
+
         n = len(numbers)
-        r = n - 1
-        # r = min(bisect.bisect_right(numbers, target-numbers[l]) , len(numbers)-1) #bisect_right good for very large data where target is not near the right end. 
-
+        l,r =0,n-1
 
         while l < r:
-        #iterate
-            left = numbers[l]
-            right = numbers[r]
-            total = left+right
-
-            if total == target:
+            #cehck sum
+            p1 = numbers[l]
+            p2 = numbers[r]
+            _sum = p1+p2
+            if _sum  == target:
                 return [l+1,r+1]
-            elif total > target:
+
+            #increment
+            if _sum > target:
                 r = r-1
-            elif total < target:
+            else:
                 l = l+1
+            
+        # return res
