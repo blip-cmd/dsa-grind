@@ -90,3 +90,6 @@ times_solved = 2
 # https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
 # notes: bit manipulation, <<, singly-linked list
 # Key: The main idea is to traverse the linked list and for each node, shift the current answer to the left (multiply by 2) and then add the node's value (0 or 1). This effectively builds the binary number as we go through the list.
+# Complexity Analysis (Interview-Ready Summary)
+# Time Complexity: O(N), where N is the number of nodes in the linked list. We visit each node exactly once.
+# Space Complexity: O(1) auxiliary space. We only use two variables, current_node and ans, no matter how long the list is.
