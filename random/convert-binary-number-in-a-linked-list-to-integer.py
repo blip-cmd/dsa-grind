@@ -11,12 +11,12 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: int
         """
+        current_node = head
         ans = 0
 
-        while head:
-            ans = (ans << 1) | head.val
-            head = head.next
-
+        while current_node:
+            ans = (ans << 1) | current_node.val
+            current_node = current_node.next
         return ans
 
 
@@ -46,8 +46,47 @@ def simulate_shift():
     print(f"\nFinal Decimal Value: {ans}")
 
 
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+def build_linked_list(values):
+    dummy = ListNode()
+    current = dummy
+
+    for value in values:
+        current.next = ListNode(value)
+        current = current.next
+
+    return dummy.next
+
+
 if __name__ == "__main__":
+    test_cases = [
+        ([1, 0, 1], 5),
+        ([0], 0),
+        ([1], 1),
+        ([1, 0, 0, 1], 9),
+        ([1, 1, 1, 1], 15),
+    ]
+
+    solution = Solution()
+
+    for values, expected in test_cases:
+        head = build_linked_list(values)
+        result = solution.getDecimalValue(head)
+        print(f"{values} -> {result} | expected: {expected}")
+        assert result == expected
+
+    # Uncomment this when you want to review the bit-shift process step by step.
     # simulate_shift()
 
 
-times_solved = 1
+times_solved = 2
+
+# Difficulty: Easy
+# https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+# notes: bit manipulation, <<, singly-linked list
+# Key: The main idea is to traverse the linked list and for each node, shift the current answer to the left (multiply by 2) and then add the node's value (0 or 1). This effectively builds the binary number as we go through the list.
