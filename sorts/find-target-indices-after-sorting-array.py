@@ -1,6 +1,5 @@
 class Solution:
     def targetIndices(self, nums: List[int], target: int) -> List[int]:
-        
         # O(nlogn) solution
         # nums.sort()
         # results = []
