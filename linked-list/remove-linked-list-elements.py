@@ -79,3 +79,5 @@ times_solved = 1
 # https://leetcode.com/problems/remove-linked-list-elements/
 # key: dummy node, previous pointer, linked list deletion
 # notes: Use sentinel so deleting the head is handled the same way as deleting any middle node.
+# space: O(1). You only allocate one sentinel node and one tracking pointer (`node`), independent of input size.
+# time: O(N). You traverse the list exactly once; every node is inspected at most twice, once via `node.next` and once via `node`.
