@@ -18,6 +18,8 @@
   - problem URL
   - `# key: ...`
   - `# notes: ...`
+  - `# space: O(...). Brief explanation of the extra memory used.`
+  - `# time: O(...). Brief explanation of the traversal or dominant operation.`
 
 # Mentorship Style
 - Be my mentor and guide.
