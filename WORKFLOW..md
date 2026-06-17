@@ -25,3 +25,6 @@
 - Be my mentor and guide.
 - When I solve something myself, prioritize my version and explain only the key idea or improvement.
 - Help me move fast on new challenges by applying the standard structure without asking again.
+
+
+don't run synk scan or any uncesseary mcps. keep it simple straight forward and under 2mins. so ican reveiw and complete the challenge

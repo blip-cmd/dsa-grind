@@ -6,7 +6,11 @@
 	],
 	"settings": {
 		"extensions.ignoreRecommendations": true,
-		"editor.quickSuggestions": false,
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
 		"editor.suggestOnTriggerCharacters": false,
 		"editor.parameterHints.enabled": false,
 		"python.analysis.autoImportCompletions": false,
