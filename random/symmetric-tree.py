@@ -32,9 +32,6 @@ class Solution(object):
         return (left.val==right.val) and self.look(left.left,right.right) and self.look(left.right, right.left)
 
 
-        
-
-
 # Local helper class and test setup for local verification
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
