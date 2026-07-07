@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"extensions.ignoreRecommendations": true,
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
+		"editor.suggestOnTriggerCharacters": false,
+		"editor.parameterHints.enabled": false,
+		"python.analysis.autoImportCompletions": false,
+		"python.analysis.diagnosticMode": "openFilesOnly",
+		"python.analysis.typeCheckingMode": "off",
+		"python.linting.enabled": false
+	},
+	"extensions": {
+		"recommendations": [],
+		"unwantedRecommendations": [
+			"github.copilot",
+			"github.copilot-chat",
+			"ms-python.flake8",
+			"ms-python.pylint",
+			"ms-python.mypy-type-checker",
+			"charliermarsh.ruff"
+		]
+	}
+}
