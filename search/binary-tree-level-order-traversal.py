@@ -11,6 +11,18 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: List[List[int]]
         """
+
+        #Thought Process
+        # # using a queue and pop on left.
+        # insert node(1st-root) into queue.
+        # while queue isnt empty
+        #     record size of queuue( tells how many nodes on the level)
+        #     pop that number out of queue
+        #     put values into a temp list -> current_level list
+        #     add their left and right nodes to the back of the queue
+        #     add current_level list to results
+
+
         if not root:
             return []
         
