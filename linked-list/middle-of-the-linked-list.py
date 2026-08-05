@@ -9,14 +9,14 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
+        
+        slow_runner,fast_runner = head,head
 
-        slow = head
-        fast = head
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next.next
-
-        return slow
+        while fast_runner and fast_runner.next:
+            slow_runner = slow_runner.next
+            fast_runner = fast_runner.next.next #2x
+        
+        return slow_runner
 
 
 class ListNode(object):
@@ -66,10 +66,10 @@ if __name__ == "__main__":
     assert result == [1]
 
 
-times_solved = 1
+# times_solved = 2
 # Difficulty: Easy
 # https://leetcode.com/problems/middle-of-the-linked-list/
-# key: slow pointer, fast pointer, two pointers
-# notes: Move `fast` two steps and `slow` one step; when `fast` reaches the end, `slow` is at the middle.
-# space: O(1). Only two pointers are used, regardless of the linked list length.
-# time: O(N). The fast pointer walks through the list once, so the traversal grows linearly with the number of nodes.
+# key: slow runner, fast runner, two pointers
+# notes: Advance fast_runner 2x faster than slow_runner; when fast_runner hits the end, slow_runner points to the middle node.
+# space: O(1). Uses only two pointer variables regardless of list length.
+# time: O(N). Linear scan where fast_runner traverses the list in N/2 steps.
